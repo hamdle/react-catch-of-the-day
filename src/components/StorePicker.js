@@ -5,12 +5,8 @@ class StorePicker extends React.Component {
 
     myInput = React.createRef();
 
-    constructor() {
-        super();
-        this.goToStore = this.goToStore.bind(this);
-    }
-
-    goToStore(event) {
+    // Define a property bound to the instance
+    goToStore = (event) => {
         // Stop form from submitting
         event.preventDefault();
         // Get input data
