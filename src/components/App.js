@@ -32,6 +32,15 @@ class App extends React.Component {
         this.setState({ fishes: sampleFishes });
     }
 
+    addToOrder = (key) => {
+        // Take a copy of state
+        const order = {...this.state.order};
+        // Add or update amount in order
+        order[key] = order[key] + 1 || 1;
+        // Call setState to update our state object
+        this.setState({order});
+    }
+
     render() {
         return (
             <div className="catch-of-the-day">
@@ -40,7 +49,12 @@ class App extends React.Component {
                     <ul className="fishes">
                         { /* The key property on <Fish> is a react special property */ }
                         {Object.keys(this.state.fishes).map(key => (
-                            <Fish key={key} details={this.state.fishes[key]} />
+                            <Fish 
+                                key={key} 
+                                index={key}
+                                details={this.state.fishes[key]} 
+                                addToOrder={this.addToOrder} 
+                            />
                         ))}
                     </ul>
                 </div>
