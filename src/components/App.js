@@ -19,10 +19,22 @@ class App extends React.Component {
     // This is a react life-cycle method
     componentDidMount() {
         const { params } = this.props.match;
+        
+        // First reinstate our localStorage
+        const localStorageRef = localStorage.getItem(params.storeID);
+        if (localStorageRef) {
+            this.setState({ order: JSON.parse(localStorageRef)});
+        }
+
+        // Sync firebase
         this.ref = base.syncState(`${params.storeID}/fishes`, {
             context: this,
             state: 'fishes'
         });
+    }
+
+    componentDidUpdate() {
+        localStorage.setItem(this.props.match.params.storeID, JSON.stringify(this.state.order));
     }
 
     componentWillUnmount() {
