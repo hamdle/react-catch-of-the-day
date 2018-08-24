@@ -1,7 +1,7 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'start' ]
 2 info using npm@3.5.2
-3 info using node@v8.10.0
+3 info using node@v8.11.4
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
 5 info lifecycle cotd@0.0.3~prestart: cotd@0.0.3
 6 silly lifecycle cotd@0.0.3~prestart: no script for prestart, continuing
@@ -26,7 +26,7 @@
 16 verbose cwd /home/eric/Code/React-For-Beginners-Starter-Files/catch-of-the-day
 17 error Linux 4.15.0-32-generic
 18 error argv "/usr/bin/node" "/usr/bin/npm" "start"
-19 error node v8.10.0
+19 error node v8.11.4
 20 error npm  v3.5.2
 21 error code ELIFECYCLE
 22 error cotd@0.0.3 start: `react-scripts start`
