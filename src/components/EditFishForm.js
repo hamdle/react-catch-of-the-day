@@ -1,7 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class EditFishForm extends React.Component {
 
+    static propTypes = {
+        fish: PropTypes.shape({
+            image: PropTypes.string,
+            name: PropTypes.string,
+            desc: PropTypes.string,
+            status: PropTypes.string,
+            price: PropTypes.number,
+        }),
+        index: PropTypes.string,
+        updateFish: PropTypes.func
+    }
     // This data needs to go upstream back up through
     // our Inventory then to the state in App
     handleChange = (event) => {
