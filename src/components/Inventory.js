@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import firebase from 'firebase';
 import AddFishForm from './AddFishForm';
 import EditFishForm from './EditFishForm';
 
